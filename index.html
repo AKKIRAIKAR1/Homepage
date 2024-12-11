@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Homepage</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Dynamic Island for Clock -->
+        
+        <div class="dynamic-island">
+            <p id="current-time"></p>
+        </div>
+        
+        <div class="header">
+            <h1>Welcome Master, how can I  help You!</h1>
+        </div>
+
+        
+
+
+        <div class="search-container">
+            <input type="text" id="search-bar" placeholder="Search the web...">
+            <button onclick="search()">Search</button>
+        </div>
+
+        <div class="links">
+            <a href="https://www.youtube.com" target="_blank" class="social-link">
+                <img src="youtube.png" alt="YouTube" />
+                YouTube
+            </a>
+            <a href="https://mail.google.com" target="_blank" class="social-link">
+                <img src="gmail.png" alt="Gmail" />
+                Gmail
+            </a>
+            <a href="https://twitter.com" target="_blank" class="social-link">
+                <img src="twitter.png" alt="Twitter" />
+                Twitter
+            </a>
+            <a href="https://chatgpt.com/" target="_blank" class="social-link">
+                <img src="chatgpt.png" alt="ChatGPT" />
+                ChatGPT
+            </a>
+        </div>
+
+        <div class="quote">
+            <p>"Your inspiring quote of the day"</p>
+        </div>
+    </div>
+
+    <script>
+        // Function to update the current time in AM/PM format
+        function updateTime() {
+            const now = new Date();
+            let hours = now.getHours();
+            const minutes = now.getMinutes();
+            const seconds = now.getSeconds();
+            let ampm = hours >= 12 ? 'PM' : 'AM';
+            hours = hours % 12;
+            hours = hours ? hours : 12; // the hour '0' should be '12'
+            const timeString = `${hours < 10 ? '0' : ''}${hours}:${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds} ${ampm}`;
+            document.getElementById("current-time").textContent = timeString;
+        }
+
+        // Call updateTime every second
+        setInterval(updateTime, 1000);
+        updateTime(); // Initialize the clock immediately
+
+        // Function for search functionality
+        function search() {
+            const query = document.getElementById("search-bar").value;
+            if (query) {
+                window.open(`https://www.google.com/search?q=${query}`, '_blank');
+            }
+        }
+    </script>
+</body>
+</html>

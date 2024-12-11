@@ -1,0 +1,192 @@
+/* Reset and Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    background: url('https://source.unsplash.com/1600x900/?nature,landscape') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+/* Container Styling */
+.container {
+    text-align: center;
+    padding: 40px;
+    background-color: rgba(0, 0, 0, 0.7);  /* Semi-transparent dark background */
+    border-radius: 20px;
+    width: 80%;
+    max-width: 1000px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* Header Styling */
+.header h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Current Time Styling */
+#current-time {
+    font-size: 1.5em;
+    color: #dcdcdc;
+    margin-top: 15px;
+}
+
+/* Search and Links Section */
+.search-container {
+    margin-top: 40px;
+}
+
+#search-bar {
+    padding: 12px;
+    font-size: 1.1em;
+    width: 60%;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-right: 12px;
+    transition: all 0.3s ease;
+}
+
+#search-bar:focus {
+    border: 1px solid #4CAF50;
+    outline: none;
+}
+
+/* Dynamic Island Styling */
+.dynamic-island {
+    margin: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 30px;
+    padding: 12px 30px;
+    font-size: 1.2em;
+    color: #fff;
+    box-shadow: 0 0 15px 5px rgba(201, 135, 201, 0.7);  /* Purple glow */
+    transition: box-shadow 0.3s ease-in-out;  /* Smooth transition for glowing effect */
+}
+
+/* Glowing effect on hover for dynamic island */
+.dynamic-island:hover {
+    box-shadow: 0 0 25px 10px rgba(128, 0, 128, 1); /* Bright purple glow */
+}
+
+/* Button Styling */
+button {
+    padding: 12px 20px;
+    font-size: 1.1em;
+    border-radius: 8px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Social Links Styling */
+.links {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-link {
+    color: white;
+    font-size: 1.2em;
+    text-decoration: none;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.social-link:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+.social-link img {
+    width: 30px;
+    height: 30px;
+}
+
+/* Quote Styling */
+.quote {
+    margin-top: 30px;
+    font-size: 1.4em;
+    font-style: italic;
+    color: #dcdcdc;
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+    body {
+        background: url('https://source.unsplash.com/1600x900/?nature,landscape') no-repeat center center fixed;
+        background-size: cover;
+    }
+
+    #search-bar {
+        width: 80%;  /* Increase search bar width on small devices */
+        margin-bottom: 20px;  /* Add some spacing below search bar */
+    }
+
+    .links {
+        flex-direction: column;
+        gap: 15px;  /* Stack the social links vertically */
+    }
+
+    .header h1 {
+        font-size: 2em;  /* Reduce header font size on small screens */
+    }
+
+    .dynamic-island {
+        font-size: 1em;  /* Decrease dynamic island text size on mobile */
+        padding: 10px 25px;
+    }
+
+    button {
+        padding: 10px 18px;
+        font-size: 1em;
+    }
+
+    .quote {
+        font-size: 1.2em;  /* Smaller font for the quote on mobile */
+    }
+}
+
+/* Media Query for Tablet to Laptop Devices */
+@media (min-width: 769px) and (max-width: 1024px) {
+    #search-bar {
+        width: 70%;
+    }
+
+    .container {
+        width: 90%;
+    }
+
+    .header h1 {
+        font-size: 2.5em;
+    }
+
+    .dynamic-island {
+        font-size: 1.1em;
+        padding: 12px 28px;
+    }
+
+    .links {
+        gap: 15px;
+    }
+}
